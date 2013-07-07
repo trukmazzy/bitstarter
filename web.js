@@ -9,7 +9,7 @@ app.get('/', function(request, response) {
     // response.writeHead(200, {'Content-Type': 'text/html','Content-Length':data.length});
     // -- if (err) { throw err; }
     // var buffer = new Buffer(data, "ascii");
-    var data = fs.readFileSync('index.html', buffer.toString());
+    var data = fs.readFileSync('index.html', 'utf-8');
     response.send(data);
     response.end();
   // -- });
