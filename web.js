@@ -5,11 +5,11 @@ var app = express.createServer(express.logger());
 
 app.get('/', function(request, response) {
   /*response.send('Hello World 2!'); */
-  // -- fs.readFileSync('index.html', function(err, data){
+  fs.readFileSync('index.html', 'utf-8', function(err, data){
     // response.writeHead(200, {'Content-Type': 'text/html','Content-Length':data.length});
-    // -- if (err) { throw err; }
+    if (err) { throw err; }
     // var buffer = new Buffer(data, "ascii");
-    var data = fs.readFileSync('index.html', buffer.toString());
+    // var data = fs.readFileSync('index.html', buffer.toString());
     response.send(data);
     response.end();
   });
