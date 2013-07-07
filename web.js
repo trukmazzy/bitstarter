@@ -5,11 +5,9 @@ var app = express.createServer(express.logger());
 
 app.get('/', function(request, response) {
   /*response.send('Hello World 2!'); */
-  fs.readFileSync('indexx.html', function(err, data){
-    response.writeHead(200, {'Content-Type': 'text/html','Content-Length':data.length});
-    if (err) {
-      throw err;
-    }
+  fs.readFileSync('index.html', function(err, data){
+    // response.writeHead(200, {'Content-Type': 'text/html','Content-Length':data.length});
+    if (err) { throw err; }
     // var buffer = new Buffer(data, "ascii");
     response.write(data.toString('utf8'));
     response.end();
