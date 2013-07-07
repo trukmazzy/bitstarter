@@ -9,7 +9,7 @@ app.get('/', function(request, response) {
     // response.writeHead(200, {'Content-Type': 'text/html','Content-Length':data.length});
     if (err) { throw err; }
     // var buffer = new Buffer(data, "ascii");
-    response.write(data);
+    response.send(data);
     response.end();
   });
 });
