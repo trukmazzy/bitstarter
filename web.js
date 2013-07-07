@@ -10,8 +10,8 @@ app.get('/', function(request, response) {
     if (err) {
       throw err;
     }
-    var buffer = new Buffer(data, "ascii");
-    response.write(buffer.toString());
+    // var buffer = new Buffer(data, "ascii");
+    response.write(data.toString());
     response.end();
   });
 });
