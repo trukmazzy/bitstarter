@@ -4,11 +4,7 @@ var fs = require('fs');
 var app = express.createServer(express.logger());
 
 app.get('/', function(request, response) {
-  fs.readFileSync('index.html', 'utf8', function(err, text){
-    response.send(text);
-  });
-  /*response.render('./index.html');
-  response.send('Hello World 2!');
+  /*response.send('Hello World 2!'); */
   fs.readFileSync('./index.html', function(err, data)){
     response.writeHead(200, {'Content-Type': 'text/html','Content-Length':data.length});
     if (err) {
@@ -16,7 +12,7 @@ app.get('/', function(request, response) {
     }
     response.write(data);
     response.end();
-  });  */
+  });
 });
 
 var port = process.env.PORT || 5000;
