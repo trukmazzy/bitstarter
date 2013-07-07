@@ -6,7 +6,7 @@ var app = express.createServer(express.logger());
 app.get('/', function(request, response) {
   // response.send('Hello World 2!');
   fs.readFileSync('index.html', function(err, data)){
-    response.writeHead(200, {'Content-Type': 'text/html','Content-Length':data.length});
+    // response.writeHead(200, {'Content-Type': 'text/html','Content-Length':data.length});
     response.write(data);
     response.end();
   });
