@@ -6,11 +6,12 @@ var app = express.createServer(express.logger());
 app.get('/', function(request, response) {
   /*response.send('Hello World 2!'); */
   fs.readFileSync('./index.html', function(err, data){
+    var buffer = data;
     response.writeHead(200, {'Content-Type': 'text/html','Content-Length':data.length});
     if (err) {
       throw err;
     }
-    response.write(buffer.toString(data));
+    response.write(buffer.toString('utf8');
     response.end();
   });
 });
