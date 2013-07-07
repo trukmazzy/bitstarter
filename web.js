@@ -4,7 +4,7 @@ var fs = require('fs');
 var app = express.createServer(express.logger());
 
 app.get('/', function(request, response) {
-  response.render('index.html');
+  response.render('./index.html');
   /* response.send('Hello World 2!');
   fs.readFileSync('./index.html', function(err, data)){
     response.writeHead(200, {'Content-Type': 'text/html','Content-Length':data.length});
